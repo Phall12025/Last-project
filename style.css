@@ -13,6 +13,7 @@
     color: white;
     font-size: 24px;
     font-weight: bold;
+    text-align:  right;
 }       
 .navdiv ul {
     list-style: none;
