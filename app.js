@@ -51,3 +51,32 @@ input.addEventListener('keydown', (e) => {
 
 // Initial demo search
 search('Batman')
+ovies.sort((a, b) => {
+
+  if (sortOrder === 'A-Z') {
+
+    return a.title.localeCompare(b.title);
+
+  } else {
+
+    return b.title.localeCompare(a.title);
+
+  }
+
+});
+movies.sort((a, b) => {
+
+  if (sortOrder === 'A-Z') {
+
+    return a.title.localeCompare(b.title);
+
+  } else {
+
+    return b.title.localeCompare(a.title);
+
+  }
+
+});
+
+
+
