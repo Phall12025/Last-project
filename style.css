@@ -28,13 +28,13 @@
     padding: 20px;
     background-color: #120ae2;
 }       
-.navdiv {
+  .navdiv li {
     color: white;
     font-size: 24px;
     font-weight: bold;
     text-align:  right;
 }       
-.navdiv ul {
+.navdiv a { color : white;}
     list-style: none;
     display: flex;
     gap: 20px;
@@ -43,6 +43,8 @@
     color: white;
     font-size: 18px;
     text-align: center;
+    
+
 }
 .navdiv button {
     padding: 10px 20px;
@@ -64,11 +66,18 @@ li  {
     
     font-size: 24px;
     text-align: right;
+    color: white;
+    
+
     
 }
 .logo {
     color: white;
     font-size: 40px;
+    box-sizing: flex
+    ;
     
+
+}
 
 }
