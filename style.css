@@ -63,6 +63,12 @@ ul
     gap: 20px;
     text-align: right;
 }
+footer {
+    background-color: #120ae2;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
 li  {
     
     font-size: 24px;
