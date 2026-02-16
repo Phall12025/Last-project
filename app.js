@@ -3,6 +3,19 @@ const OMDB_API_KEY = '9b5bb831'
 const input = document.getElementById('searchInput')
 const btn = document.getElementById('searchBtn')
 const resultsEl = document.getElementById('results')
+const filterEl = document.getElementById('filter')
+
+let currentMovies = []
+
+function getSortedMovies(list, sortOrder) {
+  const movies = [...list]
+  if (sortOrder === 'az') {
+    movies.sort((a, b) => a.Title.localeCompare(b.Title))
+  } else if (sortOrder === 'za') {
+    movies.sort((a, b) => b.Title.localeCompare(a.Title))
+  }
+  return movies
+}
 
 function renderMovies(list) {
   if (!list || list.length === 0) {
@@ -35,7 +48,9 @@ async function search(query) {
     const res = await fetch(url)
     const data = await res.json()
     if (data.Response === 'True') {
-      renderMovies(data.Search)
+      currentMovies = data.Search
+      const sorted = getSortedMovies(currentMovies, filterEl.value)
+      renderMovies(sorted)
     } else {
       resultsEl.innerHTML = `<p class="empty">${data.Error || 'No results'}</p>`
     }
@@ -48,10 +63,17 @@ btn.addEventListener('click', () => search(input.value))
 input.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') search(input.value)
 })
+filterEl.addEventListener('change', () => {
+  const sorted = getSortedMovies(currentMovies, filterEl.value)
+  renderMovies(sorted)
+})
+
+// Initial demo search
+
 
 // Initial demo search
 search('Batman')
-ovies.sort((a, b) => {
+o
 
   if (sortOrder === 'A-Z') {
 
@@ -63,7 +85,7 @@ ovies.sort((a, b) => {
 
   }
 
-});
+
 movies.sort((a, b) => {
 
   if (sortOrder === 'A-Z') {
