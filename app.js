@@ -1,5 +1,6 @@
 const OMDB_API_KEY = '9b5bb831'
 
+
 const input = document.getElementById('searchInput')
 const btn = document.getElementById('searchBtn')
 const resultsEl = document.getElementById('results')
@@ -69,36 +70,4 @@ filterEl.addEventListener('change', () => {
 })
 
 // Initial demo search
-
-
-// Initial demo search
 search('Batman')
-o
-
-  if (sortOrder === 'A-Z') {
-
-    return a.title.localeCompare(b.title);
-
-  } else {
-
-    return b.title.localeCompare(a.title);
-
-  }
-
-
-movies.sort((a, b) => {
-
-  if (sortOrder === 'A-Z') {
-
-    return a.title.localeCompare(b.title);
-
-  } else {
-
-    return b.title.localeCompare(a.title);
-
-  }
-
-});
-
-
-
