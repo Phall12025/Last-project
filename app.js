@@ -1,3 +1,5 @@
+
+
 const OMDB_API_KEY = '9b5bb831'
 
 
@@ -36,6 +38,7 @@ function renderMovies(list) {
       `
     })
     .join('')
+  animateOnScroll()
 }
 
 async function search(query) {
@@ -71,3 +74,16 @@ filterEl.addEventListener('change', () => {
 
 // Initial demo search
 search('Batman')
+
+function animateOnScroll() {
+  const movieCards = document.querySelectorAll('.movie-card');
+  movieCards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+    if (cardTop < screenHeight) {
+      card.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', animateOnScroll);
